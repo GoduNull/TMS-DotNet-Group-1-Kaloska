@@ -6,4 +6,8 @@
     <RootNamespace>TMS.DotNet.Group._1.Kaloska.Homework_9.Ui</RootNamespace>
   </PropertyGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\TMS.DotNet.Group.1.Kaloska.Homework-9.Logic\TMS.DotNet.Group.1.Kaloska.Homework-9.Logic.csproj" />
+  </ItemGroup>
+
 </Project>
