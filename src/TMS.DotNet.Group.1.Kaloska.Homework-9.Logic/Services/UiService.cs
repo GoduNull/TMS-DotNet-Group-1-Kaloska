@@ -13,7 +13,7 @@ namespace Logic.Services
             try
             {
                 var key = default(ConsoleKey);
-                do
+                while (key != ConsoleKey.Q)
                 {
                     Console.WriteLine("What do you want to see?\n1 - News." +
                         "\n2 - Weather forecast." +
@@ -37,12 +37,13 @@ namespace Logic.Services
                     }
                     else
                     {
-                        IncorrectChoice();
+                        IncorrectChoice(); 
                     }
 
-                    Console.Write("Press Q to quit..\n ");
+                    Console.WriteLine("Press Q to quit..");
+                    Console.Write("Press enter to continue..\n");
                     key = Console.ReadKey().Key;
-                } while (key != ConsoleKey.Q);
+                }
             }
             catch (Exception e)
             {
