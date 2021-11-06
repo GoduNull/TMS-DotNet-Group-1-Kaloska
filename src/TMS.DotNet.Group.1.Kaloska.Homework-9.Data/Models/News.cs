@@ -1,5 +1,4 @@
 ﻿using Newtonsoft.Json;
-using System.ComponentModel.DataAnnotations;
 
 namespace Data.Models
 {
@@ -7,7 +6,7 @@ namespace Data.Models
     {
         [JsonProperty("author")]
         public string Author { get; set; }
-       
+
         [JsonProperty("content")]
         public string Content { get; set; }
 
