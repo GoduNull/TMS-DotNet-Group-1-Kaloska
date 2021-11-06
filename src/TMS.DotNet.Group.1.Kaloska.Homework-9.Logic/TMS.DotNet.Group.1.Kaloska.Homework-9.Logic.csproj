@@ -1,4 +1,4 @@
-<Project Sdk="Microsoft.NET.Sdk">
+﻿<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
     <TargetFramework>net5.0</TargetFramework>
@@ -6,12 +6,13 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\TMS.DotNet.Group.1.Kaloska.Homework-9.Data\TMS.DotNet.Group.1.Kaloska.Homework-9.Data.csproj" />
+    <Compile Remove="Interfaces\**" />
+    <EmbeddedResource Remove="Interfaces\**" />
+    <None Remove="Interfaces\**" />
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="Helpers\" />
-    <Folder Include="Interfaces\" />
+    <ProjectReference Include="..\TMS.DotNet.Group.1.Kaloska.Homework-9.Data\TMS.DotNet.Group.1.Kaloska.Homework-9.Data.csproj" />
   </ItemGroup>
 
   <ItemGroup>

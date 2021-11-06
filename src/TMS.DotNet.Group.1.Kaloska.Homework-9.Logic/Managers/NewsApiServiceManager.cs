@@ -1,10 +1,8 @@
-﻿using Data.Models;
-using Logic.Services;
-using System;
-using System.Collections.Generic;
+﻿using System;
 using System.Linq;
-using System.Text;
 using System.Threading.Tasks;
+using Data.Models;
+using Logic.Services;
 
 namespace Logic.Managers
 {
@@ -13,7 +11,7 @@ namespace Logic.Managers
         internal async static Task ShowNewsAsync()
         {
             NewsApiService apiService = new();
-            var AllNews = await apiService.GetNewsAsyns();
+            var AllNews = await apiService.GetNewsAsync();
             foreach (News n in AllNews.Data.Take(5))
             {
                 Console.WriteLine(n.ToString());

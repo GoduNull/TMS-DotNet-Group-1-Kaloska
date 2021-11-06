@@ -1,8 +1,7 @@
-﻿using Data.Models;
-using Logic.Managers;
-using System;
-using System.Linq;
+﻿using System;
 using System.Threading.Tasks;
+using Logic.Managers;
+using TMS.DotNet.Group._1.Kaloska.Homework_9.Logic.Services;
 
 namespace Logic.Services
 {
@@ -28,6 +27,11 @@ namespace Logic.Services
                                     await NewsApiServiceManager.ShowNewsAsync();
                                     break;
                                 }
+                            case 2:
+                                {
+                                    await WeatherUiService.RunAsync();
+                                    break;
+                                }
                             default:
                                 {
                                     IncorrectChoice();
@@ -37,7 +41,7 @@ namespace Logic.Services
                     }
                     else
                     {
-                        IncorrectChoice(); 
+                        IncorrectChoice();
                     }
 
                     Console.WriteLine("Press Q to quit..");
