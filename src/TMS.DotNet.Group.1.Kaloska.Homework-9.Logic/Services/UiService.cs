@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Threading.Tasks;
 using Logic.Managers;
+using TMS.DotNet.Group._1.Kaloska.Homework_9.Logic.Managers;
 using TMS.DotNet.Group._1.Kaloska.Homework_9.Logic.Services;
 
 namespace Logic.Services
@@ -32,6 +33,9 @@ namespace Logic.Services
                                     await WeatherUiService.RunAsync();
                                     break;
                                 }
+                            case 3:
+                                await CurrencyApiServiceManager.ShowCurrencyAsync();
+                                break;
                             default:
                                 {
                                     IncorrectChoice();
