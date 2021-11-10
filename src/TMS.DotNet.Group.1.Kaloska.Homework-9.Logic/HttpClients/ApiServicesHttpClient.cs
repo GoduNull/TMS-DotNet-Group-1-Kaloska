@@ -1,8 +1,8 @@
-﻿using System;
+﻿using Newtonsoft.Json;
+using System;
 using System.Collections.Generic;
 using System.Net.Http;
 using System.Threading.Tasks;
-using Newtonsoft.Json;
 using TMS.DotNet.Group._1.Kaloska.Homework_9.Logic.Extensions;
 
 namespace TMS.DotNet.Group._1.Kaloska.Homework_9.Logic.HttpClients

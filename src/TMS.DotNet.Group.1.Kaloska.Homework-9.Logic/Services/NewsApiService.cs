@@ -1,27 +1,13 @@
-﻿using System.Net.Http;
-using System.Threading.Tasks;
-using Data.Models;
+﻿using Data.Models;
 using Logic.Constants;
-using Newtonsoft.Json;
+using System;
+using System.Threading.Tasks;
+using TMS.DotNet.Group._1.Kaloska.Homework_9.Logic.HttpClients;
 
 namespace Logic.Services
 {
     public class NewsApiService
     {
-        private HttpClient GetClient()
-        {
-            HttpClient client = new HttpClient();
-            client.DefaultRequestHeaders.Add("Accept", "application/json");
-
-            return client;
-        }
-
-        public async Task<NewsResponse> GetNewsAsync()
-        {
-            HttpClient client = GetClient();
-            var result = await client.GetAsync(CommonConstants.Web);
-
-            return JsonConvert.DeserializeObject<NewsResponse>(await result.Content.ReadAsStringAsync());
-        }
+        public static async Task<NewsResponse> GetNewsAsync() => await ApiServicesHttpClient.Get<NewsResponse>(new Uri(CommonConstants.Web));
     }
 }

@@ -1,17 +1,16 @@
-﻿using System;
+﻿using Data.Models;
+using Logic.Services;
+using System;
 using System.Linq;
 using System.Threading.Tasks;
-using Data.Models;
-using Logic.Services;
 
 namespace Logic.Managers
 {
-    class NewsApiServiceManager
+    internal class NewsApiServiceManager
     {
-        internal async static Task ShowNewsAsync()
+        internal static async Task ShowNewsAsync()
         {
-            NewsApiService apiService = new();
-            var AllNews = await apiService.GetNewsAsync();
+            var AllNews = await NewsApiService.GetNewsAsync();
             foreach (News n in AllNews.Data.Take(5))
             {
                 Console.WriteLine(n.ToString());

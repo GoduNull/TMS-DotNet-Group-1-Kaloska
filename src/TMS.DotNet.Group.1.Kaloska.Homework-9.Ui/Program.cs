@@ -1,11 +1,11 @@
-﻿using System.Threading.Tasks;
-using Logic.Services;
+﻿using Logic.Services;
+using System.Threading.Tasks;
 
 namespace TMS.DotNet.Group._1.Kaloska.Homework_9.Ui
 {
-    class Program
+    internal class Program
     {
-        static async Task Main(string[] args)
+        private static async Task Main(string[] args)
         {
             UiService uiService = new UiService();
             await uiService.RunAsync();
