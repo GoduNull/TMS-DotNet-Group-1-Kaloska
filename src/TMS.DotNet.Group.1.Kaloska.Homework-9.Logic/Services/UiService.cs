@@ -3,10 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Reflection;
 using System.Threading.Tasks;
-using Logic.Managers;
-using TMS.DotNet.Group._1.Kaloska.Homework_9.Logic.Managers;
 using TMS.DotNet.Group._1.Kaloska.Homework_9.Logic.Operations;
-using TMS.DotNet.Group._1.Kaloska.Homework_9.Logic.Services;
 
 namespace Logic.Services
 {
@@ -40,9 +37,10 @@ namespace Logic.Services
                         Console.WriteLine($"{operation.Id} ..." + operation.Name);
                     }
                     var isSuccess = int.TryParse(Console.ReadLine(), out int type);
-                    if (isSuccess)
+                    if (isSuccess && type <= _operations.Count)
                     {
-                        await _operations[type].ShowData();                      
+                        var t = _operations.Count;
+                        await _operations[type].ShowData();
                     }
                     else
                     {
@@ -50,8 +48,11 @@ namespace Logic.Services
                     }
 
                     Console.WriteLine("Press Q to quit..");
-                    Console.Write("Press enter to continue..\n");
-                    key = Console.ReadKey().Key;
+                    Console.Write("Press enter to continue..");
+                    var inputKey = Console.ReadKey().Key;
+                    if (inputKey == ConsoleKey.Q) key = inputKey;
+                    else if (inputKey == ConsoleKey.Enter) continue;
+                    else IncorrectChoice();
                 }
             }
             catch (Exception e)
@@ -62,7 +63,7 @@ namespace Logic.Services
 
         private void IncorrectChoice()
         {
-            Console.WriteLine("Incorrect choice");
+            Console.WriteLine("\nIncorrect choice");
         }
     }
 }

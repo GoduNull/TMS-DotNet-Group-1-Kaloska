@@ -1,8 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System.Threading.Tasks;
 using TMS.DotNet.Group._1.Kaloska.Homework_9.Logic.Managers;
 
 namespace TMS.DotNet.Group._1.Kaloska.Homework_9.Logic.Operations
@@ -15,7 +11,7 @@ namespace TMS.DotNet.Group._1.Kaloska.Homework_9.Logic.Operations
 
         public override async Task ShowData()
         {
-            await CurrencyApiServiceManager.ShowCurrencyAsync();           
+            await CurrencyApiServiceManager.ShowCurrencyAsync();
         }
     }
 }

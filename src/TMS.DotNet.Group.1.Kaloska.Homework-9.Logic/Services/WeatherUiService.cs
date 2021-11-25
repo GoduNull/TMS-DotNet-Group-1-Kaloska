@@ -43,7 +43,6 @@ namespace TMS.DotNet.Group._1.Kaloska.Homework_9.Logic.Services
                               $"\n  Wind Speed: {consolidatedWeatherForSelectedDay.WindSpeed:0.0} mph" +
                               $"\n  Humidity: {consolidatedWeatherForSelectedDay.Humidity:0.0}%" +
                               $"\n  Predictability: {consolidatedWeatherForSelectedDay.Predictability:0}%");
-
         }
     }
 }
